@@ -47,7 +47,15 @@ const gameSchema = new Schema({
     },
     multiplayer: {
         type: String,
-        enum: ['Singleplayer', 'Co-Operative Singleplayer', 'MMO', 'Multiplayer']
+        enum: ['Singleplayer', 'Co-Operative Singleplayer', 'MMO', 'Multiplayer'],
+        maxPlayers: {
+            type: Number,
+            min: 0
+        },
+        minPlayers: {
+            type: Number,
+            min: 1
+        }
     },
     genre: {
         type: String,
