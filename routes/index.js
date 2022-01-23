@@ -3,7 +3,7 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.redirect('/games');
+  res.render('games/home', { title: 'HOME' });
 });
 
 router.get('/auth/google', passport.authenticate(
@@ -16,14 +16,14 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/games',
-    failureRedirect : '/games'
+    successRedirect : '/',
+    failureRedirect : '/'
   }
 ));
 
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/games');
+  res.redirect('/');
 });
 
 module.exports = router;

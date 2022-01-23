@@ -5,20 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <title><%= title %></title>
+  <title>HOME</title>
 </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
     <nav>
-        <img src="/images/camera.svg">
-        <a href="/movies" <%- title === 'ALL Games' ? 'class="active"' : '' %>>All Games</a>
-        <% if (user) { %>
-          <a href="/performers/new"	<%- title === 'Companies' ? 'class="active"' : '' %>>
+        <a href="/games" <%- title === 'ALL Games' ? 'class="active"' : '' %>>All Games</a>
+        
+          <a href="/companies/new"	<%- title === 'Companies' ? 'class="active"' : '' %>>
               Companies</a>
-          <a href="/movies/new" <%- title === 'About' ? 'class="active"' : '' %>>About</a>
+          <a href="/games/new" <%- title === 'About' ? 'class="active"' : '' %>>About</a>
           <a href="/logout">LOG OUT</a>
-        <% } else { %>
+        
           <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-        <% } %>
+        
       </nav>
