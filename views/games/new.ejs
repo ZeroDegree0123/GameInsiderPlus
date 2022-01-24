@@ -1,6 +1,50 @@
+<link rel='stylesheet' href='/stylesheets/styleAddGame.css' />
 <%- include('../partials/header') %>
+<h2>Enter A New Game</h2>
+<form action="/games" method="POST">
+    <label>Image:
+        <input type="string" name="image">
+    </label>
+    <label>Title:
+        <input type="text" name="title">
+    </label>
+    <label>Company:
+        <input type="text" name="maker">
+    </label>
+    <label>ESRB:
+        <select name="title">
+            <option value="eC">EC</option>
+            <option value="E">E</option>
+            <option value="E 10+">E10+</option>
+            <option value="T">T</option>
+            <option value="M">M</option>
+            <option value="A">A</option>
+            <option value="RP">RP</option>
+        </select>
+    </label>
+    <label>Release Year:
+        <input type="datetime-local" name="releaseYear">
+    </label>
+    
+    <label>Platforms:
+        <input type="text" name="platforms">
+    </label>
+    <label>CrossPlatform:
+        <select name="crossPlatform">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+            
+        </select>
+    </label>
+    <!-- <label>Players:
+        <input type="text" name=""> 
+    </label> -->
+    <label>Genre:
+        <input type="text" name="title">
+    </label>
+    
 
-<p>hello</p>
+</form>
 
 
 <%- include('../partials/footer') %>

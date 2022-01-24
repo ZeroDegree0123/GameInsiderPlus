@@ -28,14 +28,20 @@ const gameSchema = new Schema({
             type: Number,
             min: 1
         },
-    image: String,
+    image: [{
+        type: String, 
+        match: /https:\/\//,
+    }],
     title: {
         type: String,
         required: true
     },
     releaseYear: {
-        type: Number,
-    },
+        type: Date,
+        default: function() {
+            return new Date().getFullYear()
+          },
+        },
     mpaaRating: {
         type: String,
         enum: ['eC', 'E', 'E 10+', 'T', 'M', 'A', 'RP']
@@ -50,8 +56,9 @@ const gameSchema = new Schema({
         enum: ['Xbox', 'Playstation', 'Nintendo', 'PC', 'VR']
     },
     crossPlatform: {
-        type: Boolean,
-        default: false
+        type: String,
+        enum: ['Yes', 'No'],
+        default: 'No'
     },
     
     genre: {
