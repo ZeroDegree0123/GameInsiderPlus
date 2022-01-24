@@ -3,6 +3,7 @@ const Game = require('../models/game');
 module.exports = {
     newGame,
     show,
+    create,
 }
 
 
@@ -15,3 +16,11 @@ function show(req, res) {
         res.render('games/show', { title: 'All Games', games });
       });
     }
+
+function create(req, res) {
+    const game = new Game(req.body);
+    game.save(function (err) {
+    if (err) return res.render("games/new");
+    res.redirect("games/show");
+  });
+}

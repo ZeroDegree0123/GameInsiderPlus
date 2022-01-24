@@ -1,7 +1,52 @@
 <link rel='stylesheet' href='/stylesheets/style.css' />
 <%- include('../partials/header') %>
+<section>
+    <h1>All Games</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Company</th>
+                <th>ESRB</th>
+                <th>Release Year</th>
+                <th>Platforms</th>
+                <th>CrossPlatform</th>
+                <th>Genre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <%= game.Image %>
+                </td>
+                <td>
+                    <%= game.title %>
+                </td>
+                <td>
+                    <%= game.maker %>
+                </td>
+                <td>
+                    <%= game.esrb %>
+                </td>
+                <td>
+                    <%= game.releaseYear %>
+                </td>
+                <td>
+                    <%= game.platforms %>
+                </td>
+                <td>
+                    <%= game.crossPlatform %>
+                </td>
+                <td>
+                    <%= game.genre %>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
 
-
+    
 <a href="/games/new">Add Game</a>
 <%- include('../partials/footer') %>

@@ -42,7 +42,7 @@ const gameSchema = new Schema({
             return new Date().getFullYear()
           },
         },
-    mpaaRating: {
+    esrb: {
         type: String,
         enum: ['eC', 'E', 'E 10+', 'T', 'M', 'A', 'RP']
     },

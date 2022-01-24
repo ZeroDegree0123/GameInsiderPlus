@@ -6,6 +6,6 @@ const isLoggedIn = require("../config/auth");
 
 router.get("/", gamesCtrl.show);
 router.get("/new", gamesCtrl.newGame);
-
+router.post("/", gamesCtrl.create)
 
 module.exports = router;
