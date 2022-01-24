@@ -28,11 +28,12 @@ const gameSchema = new Schema({
             type: Number,
             min: 1
         },
-    image: [{
+    image: {
         type: String, 
         match: /https:\/\//,
-    }],
-    title: {
+        required: false,
+    },
+    gameTitle: {
         type: String,
         required: true
     },
@@ -46,11 +47,10 @@ const gameSchema = new Schema({
         type: String,
         enum: ['eC', 'E', 'E 10+', 'T', 'M', 'A', 'RP']
     },
-    maker: {
-        type: Schema.Types.ObjectId,
-        ref: 'Company'
-    },
-    reviews: [gameReviewSchema],
+    // maker: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Company'
+    // },
     platforms: {
         type: String,
         enum: ['Xbox', 'Playstation', 'Nintendo', 'PC', 'VR']
@@ -63,8 +63,8 @@ const gameSchema = new Schema({
     
     genre: {
         type: String,
-        enum: ['Action', 'Adventure & Casual', 'Role-Playing', 'Simulation', 'Stragety', 'Sandbox', 'Sports', ]
-    }
+    },
+    // reviews: [gameReviewSchema],
 })
 
 

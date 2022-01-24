@@ -1,26 +1,34 @@
+const game = require('../models/game');
 const Game = require('../models/game');
 
 module.exports = {
     newGame,
-    show,
+    // show,
     create,
+    index
 }
 
+function index(req, res) {
+    Game.find({}).then(function (games) {
+        res.render("games/index", { title: 'All Games', games })
+    })
+}
 
 function newGame(req, res) {
-      res.render("games/new", { title: 'Add Game'});
+    res.render("games/new", { title: 'Add Game' });
 }
 
-function show(req, res) {
-    Game.find({}, function(err, games) {
-        res.render('games/show', { title: 'All Games', games });
-      });
-    }
+// function show(req, res) {
+//     Game.find({}, function (err, game) {
+//         res.render('games/show', { title: 'All Games', game });
+//     });
+// }
 
 function create(req, res) {
     const game = new Game(req.body);
+    console.log(game)
     game.save(function (err) {
-    if (err) return res.render("games/new");
-    res.redirect("games/show");
-  });
+        if (err) return res.render("games/new", { title: 'Add Game' });
+        res.redirect("/games", { title: 'All Games', game });
+    });
 }

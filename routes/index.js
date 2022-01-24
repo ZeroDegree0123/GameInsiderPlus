@@ -3,7 +3,7 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('games/home', { title: 'HOME' });
+  res.render('index', { title: 'HOME' });
 });
 
 router.get('/auth/google', passport.authenticate(

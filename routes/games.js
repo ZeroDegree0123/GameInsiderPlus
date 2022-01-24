@@ -4,8 +4,10 @@ var gamesCtrl = require("../controllers/games");
 const isLoggedIn = require("../config/auth");
 
 
-router.get("/", gamesCtrl.show);
+router.get("/", gamesCtrl.index);
+
 router.get("/new", gamesCtrl.newGame);
-router.post("/", gamesCtrl.create)
+
+router.post("/", gamesCtrl.create);
 
 module.exports = router;

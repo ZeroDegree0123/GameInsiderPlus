@@ -16,32 +16,35 @@
             </tr>
         </thead>
         <tbody>
+            <% games.forEach(function(g) { %>
             <tr>
                 <td>
-                    <%= game.image %>
+                    <img src="<%= g.image %>" alt="">
+                    
                 </td>
                 <td>
-                    <%= game.gameTitle %>
+                    <%= g.gameTitle %>
                 </td>
                 <td>
-                    <%= game.maker %>
+                    <%= g.maker %>
                 </td>
                 <td>
-                    <%= game.esrb %>
+                    <%= g.esrb %>
                 </td>
                 <td>
-                    <%= game.releaseYear %>
+                    <%= g.releaseYear %>
                 </td>
                 <td>
-                    <%= game.platforms %>
+                    <%= g.platforms %>
                 </td>
                 <td>
-                    <%= game.crossPlatform %>
+                    <%= g.crossPlatform %>
                 </td>
                 <td>
-                    <%= game.genre %>
+                    <%= g.genre %>
                 </td>
             </tr>
+            <% }); %> 
         </tbody>
     </table>
 </section>
