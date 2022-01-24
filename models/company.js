@@ -10,9 +10,10 @@ const companySchema = new Schema({
       type: Number, 
       min: 0 
     },
-  games: { 
-      type: Schema.Types.ObjectId, 
-      ref: "Game" },
+  games: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Game'
+  }],
 });
 
 module.exports = mongoose.model("Company", ticketSchema);

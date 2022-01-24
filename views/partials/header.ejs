@@ -8,16 +8,11 @@
   <title>HOME</title>
 </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
     <nav>
-        <a href="/games" <%- title === 'ALL Games' ? 'class="active"' : '' %>>All Games</a>
-        
-          <a href="/companies/new"	<%- title === 'Companies' ? 'class="active"' : '' %>>
-              Companies</a>
-          <a href="/games/new" <%- title === 'About' ? 'class="active"' : '' %>>About</a>
-          <a href="/logout">LOG OUT</a>
-        
-          <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-        
-      </nav>
+      <a href="/"  <%- title === 'Home' ? 'class="active"' : '' %>>Home</a>
+      <a href="/games" <%- title === 'All Games' ? 'class="active"' : '' %>>All Games</a>
+      <a href="/companies/new"	<%- title === 'Companies' ? 'class="active"' : '' %>>Companies</a>
+      <a href="/" <%- title === 'About' ? 'class="active"' : '' %>>About</a>
+      <a href="/logout">LOG OUT</a>
+      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+    </nav>

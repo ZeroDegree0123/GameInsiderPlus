@@ -20,6 +20,14 @@ const gameReviewSchema = new Schema({
 });
 
 const gameSchema = new Schema({
+    maxPlayers: {
+            type: Number,
+            min: 0
+        },
+    minPlayers: {
+            type: Number,
+            min: 1
+        },
     image: String,
     title: {
         type: String,
@@ -32,10 +40,10 @@ const gameSchema = new Schema({
         type: String,
         enum: ['eC', 'E', 'E 10+', 'T', 'M', 'A', 'RP']
     },
-    maker: [{
+    maker: {
         type: Schema.Types.ObjectId,
         ref: 'Company'
-      }],
+    },
     reviews: [gameReviewSchema],
     platforms: {
         type: String,
@@ -45,18 +53,7 @@ const gameSchema = new Schema({
         type: Boolean,
         default: false
     },
-    multiplayer: {
-        type: String,
-        enum: ['Singleplayer', 'Co-Operative Singleplayer', 'MMO', 'Multiplayer'],
-        maxPlayers: {
-            type: Number,
-            min: 0
-        },
-        minPlayers: {
-            type: Number,
-            min: 1
-        }
-    },
+    
     genre: {
         type: String,
         enum: ['Action', 'Adventure & Casual', 'Role-Playing', 'Simulation', 'Stragety', 'Sandbox', 'Sports', ]

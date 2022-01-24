@@ -1,11 +1,17 @@
-// const Game = require('../models/game');
+const Game = require('../models/game');
 
-// module.exports = {
-//     home,
-// }
+module.exports = {
+    newGame,
+    show,
+}
 
 
+function newGame(req, res) {
+      res.render("games/new", { title: 'Add Game'});
+}
 
-// function home(req, res) {
-//       res.render("/games/home")
-// }
+function show(req, res) {
+    Game.find({}, function(err, games) {
+        res.render('games/show', { title: 'All Games', games });
+      });
+    }
