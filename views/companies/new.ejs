@@ -1,3 +1,19 @@
+<link rel='stylesheet' href='/stylesheets/company.css'/>
 <%- include('../partials/header') %>
-<p>create</p>
+<h2>Add A New Company</h2>
+<form action="/companies" method="POST">
+    <label>Image:
+        <input type="string" name="image">
+    </label>
+    <label>Title:
+        <input type="string" name="title">
+    </label>
+    <label>Founded:
+        <input type="datetime-local" name="founded">
+    </label>
+    <label">Games:
+        <input type="string" name="games">
+    </label>
+    <input type="submit" value="Add Company">
+</form>
 <%- include('../partials/footer') %>

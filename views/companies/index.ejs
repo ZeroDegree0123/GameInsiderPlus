@@ -1,3 +1,37 @@
+<link rel='stylesheet' href='/stylesheets/company.css'/>
 <%- include('../partials/header') %>
-<p>list</p>
+
+<section>
+    <h1>Companies</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% companies.forEach(function(c) { %>
+            <tr>
+                <td>
+                    <img src="<%= c.image %>" alt="">
+                </td>
+                <td>
+                    <%= c.title %>
+                </td>
+               
+                <td>
+                    <a href="/companies/<%= c._id %>">Company Info</a>
+                </td>
+                <td>
+                    <form action="/companies/<%= c._id %>?_method=DELETE" method="POST">
+                        <button type="submit">X</button>
+                    </form>
+                </td>
+            </tr>
+            <% }); %> 
+        </tbody>
+    </table>
+</section>
+<a href="companies/new">Add Company</a>
 <%- include('../partials/footer') %>

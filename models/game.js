@@ -67,13 +67,4 @@ const gameSchema = new Schema({
     // reviews: [gameReviewSchema],
 })
 
-
-
-
-
-
-
-
-
-
 module.exports = mongoose.model("Game", gameSchema);

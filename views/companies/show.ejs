@@ -1,3 +1,27 @@
+<link rel='stylesheet' href='/stylesheets/company.css'/>
 <%- include('../partials/header') %>
-<p>details</p>
+<section>
+    <h1><%= company.title %></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>image</th>
+                <th>title</th>
+                <th>Founded</th>
+                <th>Games</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <img src="<%= company.image %>" alt="">
+                <td>
+                    <%= company.founded %>
+                </td>
+                <td>
+                    <%= company.games %>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 <%- include('../partials/footer') %>

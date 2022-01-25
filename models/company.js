@@ -3,17 +3,21 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const companySchema = new Schema({
-  title: { 
-      type: String
+    image: {
+        type: String,
+        match: /https:\/\//,
+        required: false,
     },
-  founded: { 
-      type: Number, 
-      min: 0 
+    title: {
+        type: String
     },
-  games: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Game'
-  }],
+    founded: {
+        type: Number,
+        min: 0
+    },
+    games: {
+        type: String,
+    },
 });
 
 module.exports = mongoose.model("Company", companySchema);
