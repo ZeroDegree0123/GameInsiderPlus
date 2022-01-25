@@ -1,4 +1,3 @@
-const game = require('../models/game');
 const Game = require('../models/game');
 
 module.exports = {
