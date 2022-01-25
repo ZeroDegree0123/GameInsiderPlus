@@ -1,12 +1,15 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+    box-sizing: border-box;
+    font-family: Helvetica;
+    color: #424748;
   }
- 
-body > nav {
+  
+  body {
+    margin: 0;
+    height: 100vh;
+  }
+  
+  body > nav {
     grid-area: nav;
     background-color: #B8C0C2;
     display: flex;
@@ -15,13 +18,13 @@ body > nav {
     padding: 0 20px 0 30px;
   }
   
-nav > img {
+  nav > img {
     width: 34px;
     object-fit: contain;
     margin-right: auto;
   }
   
-body > main {
+  body > main {
     grid-area: main;
     display: flex;
     flex-direction: column;
@@ -31,23 +34,23 @@ body > main {
     overflow-y: scroll;
   }
   
-body > main h1:first-child {
+  body > main h1:first-child {
     margin-bottom: 50px;
   }
   
-nav > a {
+  nav > a {
     margin: 20px;
     text-decoration: none;
     padding: 10px;
     border-radius: 5px;
   }
   
-nav > a:hover:not(.active) {
+  nav > a:hover:not(.active) {
     color: white;
     background-color: #424748;
   }
   
-nav > a.active {
+  nav > a.active {
     color: white;
     cursor: default;
   }
@@ -66,6 +69,7 @@ label {
     justify-content: center;
     align-items: center;
   }
+
 .login {
     display: flex;
     justify-content: center;
