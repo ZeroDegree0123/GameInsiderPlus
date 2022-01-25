@@ -12,8 +12,10 @@ const companySchema = new Schema({
         type: String
     },
     founded: {
-        type: Number,
-        min: 0
+        type: Date,
+        default: function() {
+            return new Date().getFullYear()
+          },
     },
     games: {
         type: String,
