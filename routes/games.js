@@ -8,6 +8,10 @@ router.get("/", gamesCtrl.index);
 
 router.get("/new", gamesCtrl.newGame);
 
+router.get("/:id", gamesCtrl.show);
+
+router.delete('/games/:id', gamesCtrl.deleteGame)
+
 router.post("/", gamesCtrl.create);
 
 module.exports = router;

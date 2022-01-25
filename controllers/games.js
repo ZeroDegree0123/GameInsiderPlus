@@ -3,9 +3,18 @@ const Game = require('../models/game');
 
 module.exports = {
     newGame,
-    // show,
+    show,
     create,
-    index
+    index,
+    deleteGame,
+}
+
+function deleteGame(req, res) {
+    Game.findById(req.params._id, function(game) {
+        game.remove();
+        game.save();
+    })
+    res.redirect("/games");
 }
 
 function index(req, res) {
@@ -18,11 +27,11 @@ function newGame(req, res) {
     res.render("games/new");
 }
 
-// function show(req, res) {
-//     Game.find({}, function (err, game) {
-//         res.render('games/show', { title: 'All Games', game });
-//     });
-// }
+function show(req, res) {
+    Game.findById(req.params.id, (err, game) => {
+        res.render("games/show", { game });
+    });
+  }
 
 function create(req, res) {
     const game = new Game(req.body);

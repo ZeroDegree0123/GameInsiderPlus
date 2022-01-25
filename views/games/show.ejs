@@ -1,12 +1,10 @@
-<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel='stylesheet' href='/stylesheets/styleGameInfo.css' />
 <%- include('../partials/header') %>
 <section>
-    <h1>All Games</h1>
+    <h1><%= game.gameTitle %></h1>
     <table>
         <thead>
             <tr>
-                <th>Image</th>
-                <th>Title</th>
                 <th>Company</th>
                 <th>ESRB</th>
                 <th>Release Year</th>
@@ -16,13 +14,9 @@
             </tr>
         </thead>
         <tbody>
+           <% Game.forEach(function(game) {%>
             <tr>
-                <td>
-                    <%= game.image %>
-                </td>
-                <td>
-                    <%= game.gameTitle %>
-                </td>
+                <img src="<%= game.image %>" alt="">
                 <td>
                     <%= game.maker %>
                 </td>
@@ -41,9 +35,15 @@
                 <td>
                     <%= game.genre %>
                 </td>
+                <td>
+                    <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
+                        <button type="submit">X</button>
+                    </form>
+                </td>
             </tr>
+            <% }); %>
         </tbody>
     </table>
 </section>
-<a href="/games/new">Add Game</a>
+<!-- <a href="games/index">All Games</a> -->
 <%- include('../partials/footer') %>

@@ -20,7 +20,6 @@
             <tr>
                 <td>
                     <img src="<%= g.image %>" alt="">
-                    
                 </td>
                 <td>
                     <%= g.gameTitle %>
@@ -43,6 +42,7 @@
                 <td>
                     <%= g.genre %>
                 </td>
+                <td><a href="/games/<%= g._id %>">Game Info</a></td>
             </tr>
             <% }); %> 
         </tbody>

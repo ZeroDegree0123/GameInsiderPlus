@@ -16,4 +16,4 @@
 //   }],
 // });
 
-// module.exports = mongoose.model("Company", ticketSchema);
+// module.exports = mongoose.model("Company", companySchema);
