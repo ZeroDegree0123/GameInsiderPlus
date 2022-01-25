@@ -14,7 +14,6 @@
             </tr>
         </thead>
         <tbody>
-           <% Game.forEach(function(game) {%>
             <tr>
                 <img src="<%= game.image %>" alt="">
                 <td>
@@ -35,13 +34,7 @@
                 <td>
                     <%= game.genre %>
                 </td>
-                <td>
-                    <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
-                        <button type="submit">X</button>
-                    </form>
-                </td>
             </tr>
-            <% }); %>
         </tbody>
     </table>
 </section>
