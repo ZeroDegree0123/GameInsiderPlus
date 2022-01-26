@@ -10,12 +10,7 @@ module.exports = {
 }
 
 
-function edit(req, res, next) {
-    Game.findOne({_id: req.params.id, userRecommending: req.user._id}, function(err, game) {
-        if (err || !game) return res.redirect('/games');
-        res.render('games/edit', {game});
-    });
-}
+
 
 function index(req, res) {
     Game.find({}).then(function (games) {
@@ -25,6 +20,13 @@ function index(req, res) {
 
 function newGame(req, res) {
     res.render("games/new");
+}
+
+function edit(req, res, next) {
+    Game.findById({_id: req.params.id, userRecommending: req.user._id}, function(err, game) {
+        if (err || !game) return res.redirect('/games');
+        res.render('games/edit', {game});
+    });
 }
 
 function show(req, res) {

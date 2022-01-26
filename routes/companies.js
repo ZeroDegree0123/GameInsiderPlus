@@ -4,13 +4,13 @@ var companiesCtrl = require("../controllers/companies");
 const isLoggedIn = require("../config/auth");
 
 router.get("/", companiesCtrl.index);
-console.log('companies')
-router.get("/new", companiesCtrl.newCompany);
+
+router.get("/new", isLoggedIn, companiesCtrl.newCompany);
+
+router.post("/", isLoggedIn, companiesCtrl.create);
 
 router.get("/:id", companiesCtrl.show);
 
-router.post("/", companiesCtrl.create);
-
-router.delete('/:id', companiesCtrl.deleteCompany)
+router.delete('/:id', isLoggedIn, companiesCtrl.deleteCompany)
 // router.post("/companies")
 module.exports = router;

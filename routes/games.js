@@ -7,14 +7,14 @@ const isLoggedIn = require("../config/auth");
 
 router.get("/", gamesCtrl.index);
 
-router.get("/new", gamesCtrl.newGame);
+router.get("/new", isLoggedIn, gamesCtrl.newGame);
 
-router.get('/:id/edit', gamesCtrl.edit);
+router.get('/:id/edit', isLoggedIn, gamesCtrl.edit);
 
 router.get("/:id", gamesCtrl.show);
 
-router.post("/", gamesCtrl.create);
+router.post("/", isLoggedIn, gamesCtrl.create);
 
-router.delete('/:id', gamesCtrl.deleteGame);
+router.delete('/:id', isLoggedIn, gamesCtrl.deleteGame);
 
 module.exports = router;

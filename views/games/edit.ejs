@@ -1,7 +1,7 @@
 
 <%- include('../partials/header') %>
 
-<h1>Edit Skill</h1>
+<h1>Edit Game</h1>
 <!-- the action attreibute is the path of the request when the form is submitted -->
 <form action="/games/<%= game._id %>?_method=PUT" method="POST" autocomplete="off">
 <label>Image:
@@ -43,6 +43,6 @@
             <option value="Yes">Yes</option>
         </select>
     </label>
-<button type="submit">Save Game</button>
+<input type="submit" value="Save">
 </form>
 <%- include('../partials/footer') %>
