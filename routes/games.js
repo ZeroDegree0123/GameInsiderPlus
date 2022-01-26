@@ -8,8 +8,10 @@ const isLoggedIn = require("../config/auth");
 router.get("/", gamesCtrl.index);
 
 router.get("/new", isLoggedIn, gamesCtrl.newGame);
-
+console.log('routing')
 router.get('/:id/edit', isLoggedIn, gamesCtrl.edit);
+
+router.put('/:id', isLoggedIn, gamesCtrl.update);
 
 router.get("/:id", gamesCtrl.show);
 

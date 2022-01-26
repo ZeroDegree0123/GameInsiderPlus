@@ -6,11 +6,22 @@ module.exports = {
     create,
     index,
     deleteGame,
-    edit
+    edit,
+    update
 }
 
 
-
+function update(req, res) {
+    Game.findOneAndUpdate(
+        {_id: req.params.id, userRecommending: req.user._id},
+        req.body,
+        {new: true},
+        function(err, game) {
+          if (err || !game) return res.redirect('/games');
+          res.redirect('/games');
+        }
+      );
+    }
 
 function index(req, res) {
     Game.find({}).then(function (games) {
@@ -23,9 +34,12 @@ function newGame(req, res) {
 }
 
 function edit(req, res, next) {
+    console.log('routing1')
     Game.findById({_id: req.params.id, userRecommending: req.user._id}, function(err, game) {
+        console.log('routing2')
         if (err || !game) return res.redirect('/games');
         res.render('games/edit', {game});
+        console.log('routing3')
     });
 }
 
