@@ -10,11 +10,12 @@ function create(req, res) {
         req.body.user = req.user._id;
         req.body.userName = req.user.name;
         req.body.userAvatar = req.user.avatar;
-        game.reviews.push(req.body);
+        game.reviews.push(req.body); 
         game.save(function(err) {
           res.redirect(`/games/${game._id}`);
         });
       });
+      console.log(req.body)
     }
 
 function deleteReview(req, res) {

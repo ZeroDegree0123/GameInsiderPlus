@@ -15,6 +15,7 @@ var indexRouter = require('./routes/index');
 var gamesRouter = require('./routes/games');
 var companiesRouter = require('./routes/companies');
 var reviewsRouter = require('./routes/reviews');
+var aboutRouter = require('./routes/about')
 var app = express();
 
 // view engine setup
@@ -46,8 +47,8 @@ const isLoggedIn = require("./config/auth");
 app.use('/', indexRouter);
 app.use('/games', gamesRouter);
 app.use('/companies', companiesRouter);
-app.use('/reviews', isLoggedIn, reviewsRouter)
-
+app.use('/', isLoggedIn, reviewsRouter);
+app.use('/about', aboutRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

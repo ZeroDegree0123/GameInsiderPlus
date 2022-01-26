@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const reviewsCtrl = require('../controllers/reviews');
 
-router.post('/games/:id/reviews', reviewsCtrl.create)
+router.post('/:id/reviews', reviewsCtrl.create)
 
-router.delete('/reviews/:id', reviewsCtrl.deleteReview);
+router.delete('/:id', reviewsCtrl.deleteReview);
 
 module.exports = router;
