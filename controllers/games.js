@@ -7,6 +7,11 @@ module.exports = {
     create,
     index,
     deleteGame,
+    about
+}
+
+function about(req, res) {
+    res.render('games/about');
 }
 
 function deleteGame(req, res, next) {

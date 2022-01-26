@@ -6,6 +6,6 @@ const reviewsCtrl = require('../controllers/reviews');
 console.log('above')
 router.post('/:id', reviewsCtrl.create)
 console.log('below')
-router.delete('/reviews/:id', reviewsCtrl.deleteReview);
+router.delete('/:id', reviewsCtrl.deleteReview);
 
 module.exports = router;
