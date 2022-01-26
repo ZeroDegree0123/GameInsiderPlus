@@ -1,4 +1,5 @@
 
+const game = require('../models/game');
 const Game = require('../models/game');
 
 module.exports = {
@@ -7,20 +8,21 @@ module.exports = {
     create,
     index,
     deleteGame,
-    about
+    about,
+    // edit
 }
+
+
+// function edit(req, res, next) {
+//     const game = Game.findById(req.params.id)
+//       res.render("games/edit", { game }); 
+// }
 
 function about(req, res) {
     res.render('games/about');
 }
 
-function deleteGame(req, res, next) {
-    Game.findByIdAndDelete(req.params.id, function(err, game) {
-        if (err) return res.render('/');
-        res.redirect("/games");
-    })
-    
-}
+
 
 function index(req, res) {
     Game.find({}).then(function (games) {
@@ -37,6 +39,14 @@ function show(req, res) {
         res.render("games/show", { game });
     });
   }
+
+function deleteGame(req, res, next) {
+    Game.findByIdAndDelete(req.params.id, function(err, game) {
+        if (err) return res.render('/');
+        res.redirect("/games");
+    })
+    
+}
 
 function create(req, res) {
     const game = new Game(req.body);

@@ -13,12 +13,8 @@
         <tbody>
             <% companies.forEach(function(c) { %>
             <tr>
-                <td>
-                    <img src="<%= c.image %>" alt="">
-                </td>
-                <td>
-                    <%= c.title %>
-                </td>
+                <td><img src="<%= c.image %>" alt=""></td>
+                <td><%= c.title %></td>
                 <td>
                     <a href="/companies/<%= c._id %>">Company Info</a>
                 </td>

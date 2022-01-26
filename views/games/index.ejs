@@ -12,15 +12,13 @@
         <tbody>
             <% games.forEach(function(g) { %>
             <tr>
-                <td>
-                    <img src="<%= g.image %>" alt="">
-                </td>
-                <td>
-                    <%= g.gameTitle %>
-                </td>
-               
+                <td><img src="<%= g.image %>" alt=""></td>
+                <td><%= g.gameTitle %></td>
                 <td>
                     <a href="/games/<%= g._id %>">Game Info</a>
+                </td>
+                <td>
+                    <a href="/games/<%= g.id %>/edit ">Edit Game</a>
                 </td>
                 <td>
                     <form action="/games/<%= g._id %>?_method=DELETE" method="POST">

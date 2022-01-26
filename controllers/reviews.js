@@ -4,9 +4,8 @@ module.exports = {
     create,
     deleteReview,
 }
-
+ console.log('routing function')
 function create(req, res) {
-  
     Game.findById(req.params.id, function(err, game) {  
         req.body.user = req.user.id;
         req.body.userName = req.user.name;

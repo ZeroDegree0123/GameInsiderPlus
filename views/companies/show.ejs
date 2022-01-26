@@ -1,9 +1,7 @@
 <link rel='stylesheet' href='/stylesheets/company.css' />
 <%- include('../partials/header') %>
     <section>
-        <h1>
-            <%= company.title %>
-        </h1>
+        <h1><%= company.title %></h1>
         <table>
             <thead>
                 <tr>
@@ -16,12 +14,8 @@
             <tbody>
                 <tr>
                     <img src="<%= company.image %>" alt="">
-                    <td>
-                        <%= company.founded %>
-                    </td>
-                    <td>
-                        <%= company.games %>
-                    </td>
+                    <td> <%= company.founded %></td>
+                    <td><%= company.games %></td>
                 </tr>
             </tbody>
         </table>

@@ -8,7 +8,7 @@ const gameReviewSchema = new Schema({
         type: Number,
         min: 1,
         max: 5,
-        default: undefined
+        default: 1
     },
     user: {type: Schema.Types.ObjectId, ref: 'User'},
     userName: String,

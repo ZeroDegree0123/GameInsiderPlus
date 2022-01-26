@@ -16,24 +16,12 @@
         <tbody>
             <tr>
                 <img src="<%= game.image %>" alt="">
-                <td>
-                    <%= game.maker %>
-                </td>
-                <td>
-                    <%= game.esrb %>
-                </td>
-                <td>
-                    <%= game.releaseYear %>
-                </td>
-                <td>
-                    <%= game.platforms %>
-                </td>
-                <td>
-                    <%= game.crossPlatform %>
-                </td>
-                <td>
-                    <%= game.genre %>
-                </td>
+                <td><%= game.maker %></td>
+                <td><%= game.esrb %></td>
+                <td><%= game.releaseYear %></td>
+                <td><%= game.platforms %></td>
+                <td><%= game.crossPlatform %></td>
+                <td><%= game.genre %></td>
             </tr>
         </tbody>
     </table>
@@ -41,9 +29,9 @@
 <br><br><h2>Reviews</h2>
 <% if (user) { %> 
   <form id="add-review-form" method="POST"
-    action="/reviews/<% game.id %> ">
-    <label>Review:</label>
-    <textarea name="content"></textarea>
+    action="/games/<% game._id %> ">
+    <label>Reviews:</label>
+    <textarea name="message"></textarea>
     <label>Rating:</label>
     <select name="rating">
       <option value="1">1</option>
@@ -78,7 +66,7 @@
           <td><%= r.rating %></td>
           <td>
             <% if (user && user.id.equals(r.user)) { %> 
-              <form action="/reviews/<%= r.id %>?_method=DELETE" method="POST">
+              <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
               </form>
             <% } %> 

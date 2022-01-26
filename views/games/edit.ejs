@@ -1,0 +1,48 @@
+
+<%- include('../partials/header') %>
+
+<h1>Edit Skill</h1>
+<!-- the action attreibute is the path of the request when the form is submitted -->
+<form action="/games/<%= game.id %>?_method=PUT" method="POST" autocomplete="off">
+<label>Image:
+        <input type="string" name="image">
+    </label>
+    <label>Title:
+        <input type="text" name="gameTitle">
+    </label>
+    <label>Company:
+        <input type="text" name="maker">
+    </label>
+    <label>ESRB:
+        <select name="esrb">
+            <option value="eC">EC</option>
+            <option value="E">E</option>
+            <option value="E 10+">E10+</option>
+            <option value="T">T</option>
+            <option value="M">M</option>
+            <option value="A">A</option>
+            <option value="RP">RP</option>
+        </select>
+    </label>
+    <label>Release Year:
+        <input type="datetime-local" name="releaseYear">
+    </label>
+    
+    <label>Platforms:
+        <select name="platforms">
+            <option value="Xbox">Xbox</option>
+            <option value="Playstation">Playstation</option>
+            <option value="Nintendo">Nintendo</option>
+            <option value="PC">PC</option>
+            <option value="VR">VR</option>
+        </select>
+    </label>
+    <label>CrossPlatform:
+        <select name="crossPlatform">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select>
+    </label>
+<button type="submit">Save Game</button>
+</form>
+<%- include('../partials/footer') %>
