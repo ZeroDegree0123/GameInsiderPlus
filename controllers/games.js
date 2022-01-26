@@ -1,5 +1,3 @@
-
-const game = require('../models/game');
 const Game = require('../models/game');
 
 module.exports = {
@@ -8,26 +6,21 @@ module.exports = {
     create,
     index,
     deleteGame,
-    about,
-    // edit
+    edit
 }
 
 
-// function edit(req, res, next) {
-//     const game = Game.findById(req.params.id)
-//       res.render("games/edit", { game }); 
-// }
-
-function about(req, res) {
-    res.render('games/about');
+function edit(req, res, next) {
+    Game.findOne({_id: req.params.id, userRecommending: req.user._id}, function(err, game) {
+        if (err || !game) return res.redirect('/games');
+        res.render('games/edit', {game});
+    });
 }
-
-
 
 function index(req, res) {
     Game.find({}).then(function (games) {
         res.render("games/index", { games })
-    })
+    });
 }
 
 function newGame(req, res) {
@@ -44,7 +37,7 @@ function deleteGame(req, res, next) {
     Game.findByIdAndDelete(req.params.id, function(err, game) {
         if (err) return res.render('/');
         res.redirect("/games");
-    })
+    });
     
 }
 

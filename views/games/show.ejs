@@ -29,7 +29,7 @@
 <br><br><h2>Reviews</h2>
 <% if (user) { %> 
   <form id="add-review-form" method="POST"
-    action="/games/<% game._id %> ">
+    action="/games/<%= game._id %>/reviews">
     <label>Reviews:</label>
     <textarea name="message"></textarea>
     <label>Rating:</label>
@@ -40,10 +40,9 @@
       <option value="4">4</option>
       <option value="5" selected>5</option>
    </select>
-    <input type="submit" value="Add Review">
+    <button type="submit">Add Review</button>
   </form>
 <% } %> 
-
 <% if (game.reviews.length) { %>
   <table>
     <thead>
@@ -65,7 +64,7 @@
           <td><%= r.message %></td>
           <td><%= r.rating %></td>
           <td>
-            <% if (user && user.id.equals(r.user)) { %> 
+            <% if (user && user._id.equals(r.user)) { %> 
               <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
               </form>

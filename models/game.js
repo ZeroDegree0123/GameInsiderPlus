@@ -10,26 +10,33 @@ const gameReviewSchema = new Schema({
         max: 5,
         default: 1
     },
-    user: {type: Schema.Types.ObjectId, ref: 'User'},
+    user: { type: Schema.Types.ObjectId, ref: 'User' },
     userName: String,
     userAvatar: String
 }, {
-  // Will add and maintain
-  // createdAt & updatedAt properties
+    // Will add and maintain
+    // createdAt & updatedAt properties
     timestamps: true
 });
 
 const gameSchema = new Schema({
     maxPlayers: {
-            type: Number,
-            min: 0
-        },
+        type: Number,
+        min: 0
+    },
     minPlayers: {
-            type: Number,
-            min: 1
-        },
+        type: Number,
+        min: 1
+    },
+    maker: {
+        type: String,
+    },
+    // company: {
+    //     type: Schema.Types.ObjectId, 
+    //     ref: "Company",
+    // },
     image: {
-        type: String, 
+        type: String,
         match: /https:\/\//,
         required: false,
     },
@@ -39,10 +46,10 @@ const gameSchema = new Schema({
     },
     releaseYear: {
         type: Date,
-        default: function() {
+        default: function () {
             return new Date().getFullYear()
-          },
         },
+    },
     esrb: {
         type: String,
         enum: ['eC', 'E', 'E 10+', 'T', 'M', 'A', 'RP']
@@ -56,12 +63,12 @@ const gameSchema = new Schema({
         enum: ['Yes', 'No'],
         default: 'No'
     },
-    
+
     genre: {
         type: String,
-    }, 
+    },
     reviews: [gameReviewSchema],
 }, {
     timestamps: true
-  });
+});
 module.exports = mongoose.model("Game", gameSchema);

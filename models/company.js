@@ -17,9 +17,6 @@ const companySchema = new Schema({
             return new Date().getFullYear()
           },
     },
-    games: {
-        type: String,
-    },
 });
 
 module.exports = mongoose.model("Company", companySchema);
