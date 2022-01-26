@@ -5,7 +5,7 @@ const isLoggedIn = require("../config/auth");
 
 
 router.get("/", gamesCtrl.index);
-
+console.log('going')
 router.get("/new", gamesCtrl.newGame);
 
 router.get("/:id", gamesCtrl.show);

@@ -4,7 +4,7 @@ var companiesCtrl = require("../controllers/companies");
 const isLoggedIn = require("../config/auth");
 
 router.get("/", companiesCtrl.index);
-
+console.log('companies')
 router.get("/new", companiesCtrl.newCompany);
 
 router.get("/:id", companiesCtrl.show);
