@@ -47,10 +47,6 @@ const gameSchema = new Schema({
         type: String,
         enum: ['eC', 'E', 'E 10+', 'T', 'M', 'A', 'RP']
     },
-    // maker: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Company'
-    // },
     platforms: {
         type: String,
         enum: ['Xbox', 'Playstation', 'Nintendo', 'PC', 'VR']
@@ -63,8 +59,9 @@ const gameSchema = new Schema({
     
     genre: {
         type: String,
-    },
-    // reviews: [gameReviewSchema],
-})
-
+    }, 
+    reviews: [gameReviewSchema],
+}, {
+    timestamps: true
+  });
 module.exports = mongoose.model("Game", gameSchema);

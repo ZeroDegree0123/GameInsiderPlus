@@ -14,6 +14,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var gamesRouter = require('./routes/games');
 var companiesRouter = require('./routes/companies');
+var reviewsRouter = require('./routes/reviews');
 var app = express();
 
 // view engine setup
@@ -37,11 +38,15 @@ app.use(function (req, res, next) {
   res.locals.user = req.user;
   next();
 });
+const isLoggedIn = require("./config/auth");
+
+
 
 
 app.use('/', indexRouter);
 app.use('/games', gamesRouter);
 app.use('/companies', companiesRouter);
+app.use('/reviews', isLoggedIn, reviewsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
