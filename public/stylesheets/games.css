@@ -50,11 +50,6 @@ a {
   color: black;
 }
 
-label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .login {
   display: flex;
   justify-content: center;
@@ -77,21 +72,25 @@ body > main {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin: 70px;
+  margin: 50px;
   width: 90%;
+  justify-items: center;
 }
 
 .game-container > article {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  border: 5px solid black;
-  padding: 20px 0;
+  border: 5px solid grey;
+  background-color: beige;
+  padding: 10px 0;
+  max-width: 300px; 
 }
 
 .image {
   object-fit: cover;
-  height: 300px;
+  height: 310px;
   width: 250px;
 }
 
@@ -105,3 +104,4 @@ body > main {
   display: inline-block;
   margin: 5px;
 }
+
