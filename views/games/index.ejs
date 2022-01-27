@@ -1,34 +1,31 @@
 <link rel='stylesheet' href='/stylesheets/games.css' />
 <%- include('../partials/header') %>
-<section>
-    <h1>All Games</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Image</th>
-                <th>Title</th>
-            </tr>
-        </thead>
-        <tbody>
+    <section>
+        <h1>All Games</h1>
+        <div class="table">
             <% games.forEach(function(g) { %>
-            <tr>
-                <td><img src="<%= g.image %>" alt=""></td>
-                <td><%= g.gameTitle %></td>
-                <td>
-                    <a href="/games/<%= g._id %>">Game Info</a>
-                </td>
-                <td>
-                    <a href="/games/<%= g._id %>/edit ">Edit Game</a>
-                </td>
-                <td>
-                    <form action="/games/<%= g._id %>?_method=DELETE" method="POST">
-                        <button type="submit">X</button>
-                    </form>
-                </td>
-            </tr>
-            <% }); %> 
-        </tbody>
-    </table>
-</section>
-<a href="/games/new">Add Game</a>
-<%- include('../partials/footer') %>
+                <tr>
+                    <td>
+                        <img class="image" src="<%= g.image %>" alt="">
+                    </td>
+                    <td class="name">
+                        <%= g.gameTitle %>
+                    </td>
+                    <td>
+                        <a class="info" href="/games/<%= g._id %>">Game Info</a>
+                    </td>
+                    <td>
+                        <a class="edit" href="/games/<%= g._id %>/edit ">Edit Game</a>
+                    </td>
+                    <td>
+                        <form action="/games/<%= g._id %>?_method=DELETE" method="POST">
+                            <button type="submit">X</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }); %>
+        </div>
+        <a href="/games/new">Add Game</a>
+    </section>
+    
+    <%- include('../partials/footer') %>
