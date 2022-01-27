@@ -1,31 +1,23 @@
 <link rel='stylesheet' href='/stylesheets/games.css' />
 <%- include('../partials/header') %>
-    <section>
+    <main>
         <h1>All Games</h1>
-        <div class="table">
+        <section class="game-container">
             <% games.forEach(function(g) { %>
-                <tr>
-                    <td>
-                        <img class="image" src="<%= g.image %>" alt="">
-                    </td>
-                    <td class="name">
-                        <%= g.gameTitle %>
-                    </td>
-                    <td>
-                        <a class="info" href="/games/<%= g._id %>">Game Info</a>
-                    </td>
-                    <td>
-                        <a class="edit" href="/games/<%= g._id %>/edit ">Edit Game</a>
-                    </td>
-                    <td>
-                        <form action="/games/<%= g._id %>?_method=DELETE" method="POST">
-                            <button type="submit">X</button>
-                        </form>
-                    </td>
-                </tr>
+                <article>
+                    <img class="image" src="<%= g.image %>" alt="">
+                    <h3><%= g.gameTitle %></h3>
+                    <div>
+                    <a class="info" href="/games/<%= g._id %>">Game Info</a>
+                    <a class="edit" href="/games/<%= g._id %>/edit ">Edit Game</a>
+                    <form action="/games/<%= g._id %>?_method=DELETE" method="POST">
+                        <button type="submit">X</button>
+                    </form>
+                    </div>
+                </article>
                 <% }); %>
-        </div>
+            </section>
         <a href="/games/new">Add Game</a>
-    </section>
-    
+    </main>
+
     <%- include('../partials/footer') %>

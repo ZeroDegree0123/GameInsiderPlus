@@ -5,10 +5,8 @@
 }
 
 body {
-  margin: 0;
-  height: 100vh;
+  margin: auto;
   display: grid;
-  grid-template-rows: 50px 1fr;
   grid-template-areas: 
     "nav"
     "main"
@@ -22,6 +20,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   padding: 0 20px 0 30px;
+  height: 70px;
 }
 
 .login {
@@ -37,20 +36,6 @@ nav > img {
   width: 34px;
   object-fit: contain;
   margin-right: auto;
-}
-
-body > main {
-  grid-area: main;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #E8ECEB;
-  padding: 20px;
-  overflow-y: scroll;
-}
-
-body > main h1:first-child {
-  margin-bottom: 50px;
 }
 
 nav > a {
@@ -83,10 +68,12 @@ nav > a.active {
 
 .main {
   display: grid;
-  grid-template-areas: 
-  "image-a  featured  img-b"
-  "image-a  genre     img-b"
-  "image-a  platform  img-b"
+  grid-area: main;
+  grid-template-columns: 1fr, 1fr, 1fr;
+  grid-template-rows: 1fr, 1fr, 1fr;
+  flex-direction: column;
+  margin: 100px;
+  
 }
 
 /* .highlights {
@@ -103,22 +90,22 @@ div > img {
 
 .image-a {
   background-color: blue;
-  grid-area: img-a;
+  grid-template-areas: 1 / 1 / 4 / 2;
 }
 
 .image-b {
   background-color: green;
-  grid-area: img-b;
+  grid-template-areas: 1 / 3 / 4 / 4;
 }
 .featured {
   background-color: red;
-  grid-area: featured;
+  grid-template-areas: 1 / 2 / 2 / 3;
 }
 .genre {
   background-color: pink;
-  grid-area: genre;
+  grid-template-areas: 2 / 2 / 3 / 3;
 }
 .platform {
   background-color: yellow;
-  grid-area: platform;
+  grid-template-areas: 3 / 2 / 4 / 3;
 }
