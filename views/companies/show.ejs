@@ -6,7 +6,8 @@
         <h1><%= company.title %></h1>
         <img src="<%= company.image %>" alt="">
       </div>
-      <div class="company"> 
+      <div class="company-founded">
+        <h3>Founded</h3> 
         <span> <%= company.founded %></span>
       </div>          
     </div>
@@ -16,48 +17,28 @@
     <section class="review-container">
       <div class="review-wrapper">
         <form id="add-review-form" method="POST"action="/companies/<%= company._id %>/products">
-        <div class="reviews-box">
-          <label>Games:</label>
-          <textarea name="message"></textarea>
-        </div>
-        <button type="submit">Add Game</button>
-      </form>
-      <div></div>
-    <% } %> 
-    <% if (company.products.length) { %>
-      <table>
-        <thead>
-          <tr>
-            <th>User</th>
-            <th>Date</th>
-            <th>Game</th>
-          </tr>
-        </thead>
-        <tbody>
-        <% let total = 0 %>
-        <% company.products.forEach(function(r) { %>
-          <tr>
-            <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>"><%= r.userName %></td>
-            <td><%= r.createdAt.toLocaleDateString() %></td>
-            <td><%= r.message %></td>
-            <td>
+          <div class="reviews-box">
+            <label>Add Game:</label>
+            <textarea name="message"></textarea>
+          </div>
+          <button type="submit">Add</button>
+        </form>
+      <div class="reviews-wrapper2">
+      <% } %> 
+        <% if (company.products.length) { %>
+          <% let total = 0 %>
+          <% company.products.forEach(function(r) { %>
+            <td class="game-added"><%= r.message %></td>
               <% if (user && user._id.equals(r.user)) { %> 
                 <form action="/products/<%= r._id %>?_method=DELETE" method="POST">
-                  <button type="submit">X</button>
+                  <button class="delete-game" type="submit">X</button>
                 </form>
               <% } %> 
-            </td>
-          </tr>
-        <% }); %>
-        <tr>
-          <td colspan="3"></td>
-          <td><strong><%= (total / company.products.length).toFixed(1) %></strong></td>
-        </tr>
-      </tbody>
-    </table>
-  <% } else { %>
-    <h5>No games Yet</h5>
-  <% } %>
-  </div>
-</section> 
+          <% }); %>
+        <% } else { %>
+            <h5>No games Yet</h5>
+        <% } %>
+        </div>
+      </div>
+    </section> 
     <%- include('../partials/footer') %>

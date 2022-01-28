@@ -6,12 +6,12 @@
 
 body {
 margin: auto;
-background-image: linear-gradient( #dadada, grey);
+background-image: linear-gradient( white, orange);
 }
 
 body > nav {
 grid-area: nav;
-background-image: linear-gradient( black, grey);
+background-color: #23252b;
 display: flex;
 flex-direction: row;
 justify-content: flex-start;
@@ -70,7 +70,7 @@ justify-content: flex-end;
 align-items: center;
 height: 34px;
 color: #dadada;
-width: 100%;
+width: 700px;
 }
 
 .login img {
@@ -78,7 +78,7 @@ height: 30px;
 }
 
 .website {
-  color: green;
+  color: rgb(26, 181, 228);
 }
 
 body > main {
@@ -102,8 +102,8 @@ body > main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 3px solid rgba(0, 128, 0, 0.5);
-  box-shadow: 4px 4px 4px 4px rgba(0, 128, 0, 0.2);
+  border: 3px solid rgba(19, 193, 216, 0.5);
+  box-shadow: 3px 3px 3px 3px rgba(0, 128, 0, 0.2);
   background-color: beige;
   padding: 10px 0;
   max-width: 300px; 
@@ -126,3 +126,10 @@ body > main {
   margin: 5px;
 }
 
+p {
+  margin: 10px;
+}
+
+h2 {
+  margin: 10px;
+}

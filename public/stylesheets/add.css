@@ -6,11 +6,7 @@
 
 body {
 margin: auto;
-/* display: grid;
-grid-template-areas: 
-  "nav"
-  "main" */
-  background-color: #23252b;
+background-image: linear-gradient( white, orange);
 }
 
 body > nav {
@@ -69,5 +65,25 @@ height: 30px;
 }
 
 .website {
-  color: green;
+  color: rgb(26, 181, 228);
 }
+
+section {
+  display: block;
+}
+
+.wrapper {
+  display: flex;
+  margin: 30px;
+  box-shadow: 8px 4px 8px 8px rgb(0 0 0 / 20%);
+}
+
+div {
+  justify-content: center;
+  padding: 10px;
+}
+
+.button {
+  margin: 5px 0 0 11px;
+}
+
