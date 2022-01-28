@@ -1,32 +1,23 @@
-<link rel='stylesheet' href='/stylesheets/company.css'/>
+<link rel='stylesheet' href='/stylesheets/games.css' />
 <%- include('../partials/header') %>
-
-<section>
-    <h1>Companies</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Image</th>
-                <th>Title</th>
-            </tr>
-        </thead>
-        <tbody>
+    <main>
+        <h1>Companies</h1>
+        <section class="game-container">
             <% companies.forEach(function(c) { %>
-            <tr>
-                <td><img src="<%= c.image %>" alt=""></td>
-                <td><%= c.title %></td>
-                <td>
-                    <a href="/companies/<%= c._id %>">Company Info</a>
-                </td>
-                <td>
-                    <form action="/companies/<%= c._id %>?_method=DELETE" method="POST">
-                        <button type="submit">X</button>
-                    </form>
-                </td>
-            </tr>
-            <% }); %> 
-        </tbody>
-    </table>
-</section>
-<a href="companies/new">Add Company</a>
+                <article>
+                    <img class="image" src="<%= c.image %>" alt="">
+                    <h3>
+                        <%= c.title %>
+                    </h3>
+                    <div>
+                        <a href="/companies/<%= c._id %>">Company Info</a>
+                        <form action="/companies/<%= c._id %>?_method=DELETE" method="POST">
+                            <button type="submit">X</button>
+                        </form>
+                    </div>
+                </article>
+                <% }); %>
+        </section>
+        <a href="companies/new">Add Company</a>
+    </main>
 <%- include('../partials/footer') %>
