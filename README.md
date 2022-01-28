@@ -13,6 +13,10 @@ This app is designed to show and give information about games and their develope
     1.JavaScript
     2.CSS
     3.Html
+    4.Node
+    5.Express
+    6.MongoDB
+    7.Mongoose
 
 ### App Link
 [Click To Go To App](https://game-insider-plus.herokuapp.com/)
