@@ -6,92 +6,95 @@
         <h1><%= game.gameTitle %></h1>
         <img src="<%= game.image %>" alt="">
       </div>
-      <div class="company"> 
+      <div class="company">
         <h3>Company</h3>
         <span><%= game.maker %></span>
       </div>
       <div class="esbr">
         <h3>ESRB</h3>
-        <span><%= game.esrb %></span> 
+        <span><%= game.esrb %></span>
       </div>
-      <div class="year"> 
+      <div class="year">
         <h3>Release Year</h3>
         <span><%= game.releaseYear %></span>
       </div>
-      <div class="platform"> 
+      <div class="platform">
         <h3>Platforms</h3>
         <span><%= game.platforms %></span>
       </div>
-      <div class="cross"> 
+      <div class="cross">
         <h3>CrossPlatform</h3>
         <span><%= game.crossPlatform %></span>
       </div>
-      <div class="genre"> 
+      <div class="genre">
         <h3>Genre</h3>
         <span><%= game.genre %></span>
       </div>
     </div>
   </section>
-  <br><br><h2>Reviews</h2>
-  <% if (user) { %> 
-  <section class="review-container">
-    <div class="review-wrapper">
-      <form id="add-review-form" method="POST" action="/games/<%= game._id %>/reviews">
-        <div class="reviews-box">
-          <label>Reviews:</label>
-          <textarea name="message"></textarea>
+  <br><br>
+  <h2>Reviews</h2>
+  <% if (user) { %>
+    <section class="review-container">
+      <div class="review-wrapper">
+        <form id="add-review-form" method="POST" action="/games/<%= game._id %>/reviews">
+          <div class="reviews-box">
+            <label>Reviews:</label>
+            <textarea name="message"></textarea>
+          </div>
+          <div class="ratings">
+            <label>Rating:</label>
+            <select name="rating">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5" selected>5</option>
+            </select>
+          </div>
+          <button type="submit">Add Review</button>
+        </form>
+        <div class="reviews-wrapper2">
+          <% } %>
+            <% if (game.reviews.length) { %>
+              <% let total=0 %>
+                <% game.reviews.forEach(function(r) { %>
+                  <% total +=r.rating %>
+                    <div class="user">
+                      <h3>User</h3>
+                      <span class="review-user"><img alt="avatar" src="<%= r.userAvatar %>"><%= r.userName %></span>
+                    </div>
+                    <div class="date">
+                      <h3>Date</h3>
+                      <span><%= r.createdAt.toLocaleDateString() %></span>
+                    </div>
+                    <div class="user-text">
+                      <h3>Review</h3>
+                      <span><%= r.message %></span>
+                    </div>
+                    <div class="user-rating">
+                      <h3>Rating</h3>
+                      <span><%= r.rating %></span>
+                    </div>
+                    <div class="delete">
+                      <% if (user && user._id.equals(r.user)) { %>
+                        <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                          <button type="submit">X</button>
+                        </form>
+                        <% } %>
+                    </div>
+                    <% }); %>
+                      <div>
+                        <span colspan="3"></span>
+                        <span><strong>
+                            <%= (total / game.reviews.length).toFixed(1) %>
+                          </strong></span>
+                      </div>
+                      <% } else { %>
+                        <h5>No Reviews Yet</h5>
+                        <% } %>
         </div>
-        <div class="ratings">
-          <label>Rating:</label>
-          <select name="rating">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5" selected>5</option>
-          </select>
-        </div>
-        <button type="submit">Add Review</button>
-      </form>
-      <div class="reviews-wrapper2">
-        <% } %> 
-        <% if (game.reviews.length) { %>
-          <% let total = 0 %>
-          <% game.reviews.forEach(function(r) { %>
-            <% total += r.rating %>
-            <div class="user">
-              <h3>User</h3>
-              <span class="review-user"><img alt="avatar" src="<%= r.userAvatar %>"><%= r.userName %></span>
-            </div>
-            <div class="date">
-              <h3>Date</h3>
-              <span><%= r.createdAt.toLocaleDateString() %></span>
-            </div>
-            <div class="user-text"> 
-              <h3>Review</h3>
-              <span><%= r.message %></span>
-            </div>
-            <div class="user-rating">
-              <h3>Rating</h3>
-              <span><%= r.rating %></span>
-            </div>
-              <div class="delete">
-                <% if (user && user._id.equals(r.user)) { %> 
-                  <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                  </form>
-                <% } %> 
-              </div>
-            <% }); %>
-            <div>
-              <span colspan="3"></span>
-              <span><strong><%= (total / game.reviews.length).toFixed(1) %></strong></span>
-            </div>
-        <% } else { %>
-        <h5>No Reviews Yet</h5>
-      <% } %>
-    </div>
-  </div>
-</section>
-<!-- <a href="games/index">All Games</a> -->
-<%- include('../partials/footer') %>
+      </div>
+    </section>
+    <!-- <a href="games/index">All Games</a> -->
+    <%- include('../partials/footer') %>
