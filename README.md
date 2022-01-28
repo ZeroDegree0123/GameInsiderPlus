@@ -1,6 +1,6 @@
 # GameInsiderPlus
 
-    This app is designed to show and give information about games and their developers. Users can select named links that will lead them to their desired path.
+This app is designed to show and give information about games and their developers. Users can select named links that will lead them to their desired path. User must be signed in to make changes to the app.
 
 
 ## ScreenShots
@@ -20,6 +20,6 @@
 
 ## Next Steps
 
-    Further steps I would like to make to my app are:
-    create unique styling to the home page and game information pages, I would like to add even more information about a game as well as there developers history, I would like to make a users favorite page, 
-    add a drop down option for main links that would lead to more specififc links Ex. 'Top Rated Games', And I would like to touch up my about page.
+Further steps I would like to make to my app are:
+create unique styling to the home page and game information pages, I would like to add even more information about a game as well as there developers history, I would like to make a users favorite page, 
+add a drop down option for main links that would lead to more specififc links Ex. 'Top Rated Games', And I would like to touch up my about page.
