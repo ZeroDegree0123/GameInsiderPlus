@@ -1,51 +1,70 @@
 <link rel='stylesheet' href='/stylesheets/add.css' />
 <%- include('../partials/header') %>
-
-<h1>Edit Game</h1>
-<!-- the action attreibute is the path of the request when the form is submitted -->
-<form action="/games/<%= game._id %>?_method=PUT" method="POST" autocomplete="off">
-<label>Image:
-        <input type="string" name="image">
-    </label>
-    <label>Title:
-        <input type="text" name="gameTitle">
-    </label>
-    <label>Company:
-        <input type="text" name="maker">
-    </label>
-    <label>ESRB:
-        <select name="esrb">
-            <option value="eC">EC</option>
-            <option value="E">E</option>
-            <option value="E 10+">E10+</option>
-            <option value="T">T</option>
-            <option value="M">M</option>
-            <option value="A">A</option>
-            <option value="RP">RP</option>
-        </select>
-    </label>
-    <label>Release Year:
-        <input type="datetime-local" name="releaseYear">
-    </label>
-    
-    <label>Platforms:
-        <select name="platforms">
-            <option value="Xbox">Xbox</option>
-            <option value="Playstation">Playstation</option>
-            <option value="Nintendo">Nintendo</option>
-            <option value="PC">PC</option>
-            <option value="VR">VR</option>
-        </select>
-    </label>
-    <label>CrossPlatform:
-        <select name="crossPlatform">
-            <option value="No">No</option>
-            <option value="Yes">Yes</option>
-        </select>
-    </label>
-    <label>Genre:
-        <input type="text" name="title">
-    </label>
-<input type="submit" value="Save">
-</form>
+<section class="container">
+    <div class="wrapper">
+        <div class="preview">
+            <h2 class="edit">Edit Game</h2>
+            <form action="/games" method="POST">
+                <div>
+                    <label>Image:
+                        <input type="string" name="image">
+                    </label>
+                </div>
+                <div>
+                    <label>Title:
+                        <input type="text" name="gameTitle">
+                    </label>
+                </div>
+                <div>
+                    <label>Company:
+                        <input type="text" name="maker">
+                    </label>
+                </div>
+               <div>
+                   <label>ESRB:
+                        <select name="esrb">
+                            <option value="eC">EC</option>
+                            <option value="E">E</option>
+                            <option value="E 10+">E10+</option>
+                            <option value="T">T</option>
+                            <option value="M">M</option>
+                            <option value="A">A</option>
+                            <option value="RP">RP</option>
+                        </select>
+                    </label>
+                </div> 
+                <div>
+                    <label>Release Year:
+                        <input type="date" name="releaseYear">
+                    </label>
+                </div>
+                <div>
+                    <label>Platforms:
+                        <select name="platforms">
+                            <option value="Xbox">Xbox</option>
+                            <option value="Playstation">Playstation</option>
+                            <option value="Nintendo">Nintendo</option>
+                            <option value="PC">PC</option>
+                            <option value="VR">VR</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label>CrossPlatform:
+                        <select name="crossPlatform">
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label>Genre:
+                        <input type="text" name="title">
+                    </label>
+                </div>
+                <input class="button" type="submit" value="Add Game">
+            </form>
+        </div>
+    </div>
+</section>
 <%- include('../partials/footer') %>
