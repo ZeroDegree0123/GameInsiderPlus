@@ -16,6 +16,7 @@ This app is designed to show and give information about games and their develope
 
 ### App Link
 [Click To Go To App](https://game-insider-plus.herokuapp.com/)
+
 [Click For Trello](https://trello.com/b/skPlyb7J/gamer-critics)
 
 ## Next Steps
