@@ -1,97 +1,158 @@
 * {
-    box-sizing: border-box;
-    font-family: Helvetica;
-    color: #424748;
-  }
-  
-  body {
-    margin: 0;
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 50px 1fr;
-    grid-template-areas: 
-      "nav"
-      "main"
-  }
-  
-  body > nav {
-    grid-area: nav;
-    background-color: #B8C0C2;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0 20px 0 30px;
-  }
-  
-  nav > img {
-    width: 34px;
-    object-fit: contain;
-    margin-right: auto;
-  }
-  
-  body > main {
-    grid-area: main;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #E8ECEB;
-    padding: 20px;
-    overflow-y: scroll;
-  }
-  
-  body > main h1:first-child {
-    margin-bottom: 50px;
-  }
-  
-  nav > a {
-    margin: 20px;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  nav > a:hover:not(.active) {
-    color: white;
-    background-color: #424748;
-  }
-  
-  nav > a.active {
-    color: white;
-    cursor: default;
-  }
-  
-  a {
-    color: black;
-  }
-
-section > img {
- width: 50px;
- height: 50px;
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: #424748;
 }
 
-label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 34px;
-  }
-  
-  .login img {
-    height: 30px;
-  }
-  
-  .review-user {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .review-user img {
-    border-radius: 50%;
-    height: 40px;
-  }
+body {
+ margin: auto;
+ background-color: #dadada;
+}
+
+body > nav {
+  grid-area: nav;
+  background-color: #23252b;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20px 0 30px;
+  height: 70px;
+  width: 100%;
+}
+
+nav > img {
+  width: 34px;
+  justify-content: flex-end;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: #dadada;
+  font-size: 20px;
+
+}
+
+nav > a:hover:not(.active) {
+  color: #dadada;
+  background-color: #424748;
+}
+
+nav > a.active {
+  color: #dadada;
+  cursor: default;
+}
+
+a {
+  color: #dadada;
+}
+
+.login {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 34px;
+  color: #dadada;
+  width: 700px;
+}
+
+.login img {
+  height: 30px;
+}
+
+.website {
+  color: green;
+}
+
+section {
+  display: block;
+}
+
+.info-wrapper {
+  display: flex;
+  margin: 30px;
+  box-shadow: 8px 4px 8px 8px rgb(0 0 0 / 20%);
+}
+
+h1 {
+  margin: 20px;
+  padding: 0 0 0 0px;
+}
+
+img {
+  width: 250px;
+  height: 200px;
+  margin: 0 0 10px 10px;
+  border: 3px solid rgba(0, 7, 0, 0.5);
+
+}
+
+h3 {
+  padding: 20px;
+  display: inline-block;
+  flex-wrap: wrap;
+}
+
+.company {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.esbr {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.year {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.platform {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+.cross {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.genre {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.review-container {
+  display: block;
+}
+
+.review-wrapper {
+  display: flex;
+  margin: 30px;
+  box-shadow: 0 0 2px 0 rgb(0 0 0 / 20%);
+}
+
+.reviews-box {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.ratings {
+  padding: 10px;
+}
+
+.reviews-wrapper2 {
+  display: flex;
+  flex-direction: row;
+}

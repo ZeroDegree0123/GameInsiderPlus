@@ -10,16 +10,18 @@ margin: auto;
 grid-template-areas: 
   "nav"
   "main" */
+  background-color: grey;
 }
 
 body > nav {
 grid-area: nav;
-background-color: #B8C0C2;
+background-image: linear-gradient( black, grey);
 display: flex;
 justify-content: flex-start;
 align-items: center;
 padding: 0 20px 0 30px;
 height: 70px;
+width: 100%;
 }
 
 nav > img {
@@ -34,31 +36,40 @@ margin: 20px;
 text-decoration: none;
 padding: 10px;
 border-radius: 5px;
+color: #dadada;
+font-size: 20px;
+
 }
 
 nav > a:hover:not(.active) {
-color: white;
+color: #dadada;
 background-color: #424748;
 }
 
 nav > a.active {
-color: white;
+color: #dadada;
 cursor: default;
 }
 
 a {
-color: black;
+color: #dadada;
 }
 
 .login {
 display: flex;
-justify-content: center;
+justify-content: flex-end;
 align-items: center;
 height: 34px;
+color: #dadada;
+width: 700px;
 }
 
 .login img {
 height: 30px;
+}
+
+.website {
+  color: green;
 }
 
 main {
@@ -80,6 +91,7 @@ justify-items: center;
 
 .image-a {
 grid-area: 1 / 1 / 4 / 2;
+
 }
 
 .image-b {
@@ -90,25 +102,40 @@ grid-area: 1 / 3 / 4 / 4;
   object-fit: cover;
   width: 100%;
   height: 100%;
+  padding: 21px 0;
 }
 
-/* #img1, #img2, #img3, #img4, #img7, #img6, #img8, #img9 {
-  visibility: hidden;
-} */
+#img1, #img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10 {
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
+  position: absolute;
+}
 
 .featured {
   grid-area: 1 / 2 / 2 / 3;
-  width: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: #dadada;
+  border: 3px solid green;
+  padding: 4px 0;
 }
 
 .platform {
   grid-area: 2 / 2 / 3 / 3;
-  width: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: #dadada;
+  border: 3px solid green;
+  padding: 4px;
 }
 
 .action {
   grid-area: 3 / 2 / 4 / 3;
-  width: 50%;
+  width: 100%;
+  height: 92%;
+  background-color: #dadada;
+  border: 3px solid green;
+  padding: 4px;
 }
 
 

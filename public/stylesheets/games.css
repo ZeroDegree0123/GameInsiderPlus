@@ -1,64 +1,84 @@
 * {
-    box-sizing: border-box;
-    font-family: Helvetica;
-    color: #424748;
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: #424748;
 }
-  
+
 body {
-  margin: auto;
-  display: grid;
-  grid-template-areas: 
-    "nav"
-    "main"
+margin: auto;
+background-image: linear-gradient( #dadada, grey);
 }
 
 body > nav {
-  grid-area: nav;
-  background-color: #B8C0C2;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 0 20px 0 30px;
-  height: 70px;
+grid-area: nav;
+background-image: linear-gradient( black, grey);
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+align-items: center;
+padding: 0 20px 0 30px;
+height: 70px;
+width: 100%;
 }
 
 nav > img {
-  width: 34px;
-  justify-content: flex-end;
-  object-fit: contain;
-  margin-right: auto;
+width: 34px;
+justify-content: flex-end;
+object-fit: contain;
+margin-right: auto;
 }
 
 nav > a {
-  margin: 20px;
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 5px;
+margin: 20px;
+text-decoration: none;
+padding: 10px;
+border-radius: 5px;
+color: #dadada;
+font-size: 20px;
+
 }
 
 nav > a:hover:not(.active) {
-  color: white;
-  background-color: #424748;
+color: #dadada;
+background-color: #424748;
 }
 
 nav > a.active {
-  color: white;
-  cursor: default;
+color: #dadada;
+cursor: default;
 }
 
 a {
-  color: black;
+color: black;
+}
+
+.add-game {
+  font-size: 20px;
+  margin: 0 0 80px 0;
+  opacity: 85%;
+}
+
+.add-game:hover {
+  transition: 0.1s;
+  font-size: 21px;
+  opacity: 100%;
 }
 
 .login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 34px;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+height: 34px;
+color: #dadada;
+width: 100%;
 }
 
 .login img {
-  height: 30px;
+height: 30px;
+}
+
+.website {
+  color: green;
 }
 
 body > main {
@@ -82,7 +102,8 @@ body > main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 5px solid grey;
+  border: 3px solid rgba(0, 128, 0, 0.5);
+  box-shadow: 4px 4px 4px 4px rgba(0, 128, 0, 0.2);
   background-color: beige;
   padding: 10px 0;
   max-width: 300px; 

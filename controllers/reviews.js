@@ -4,7 +4,7 @@ module.exports = {
     create,
     deleteReview,
 }
- console.log('routing function')
+ 
 function create(req, res) {
     Game.findById(req.params.id, function(err, game) {  
         req.body.user = req.user._id;
@@ -12,6 +12,7 @@ function create(req, res) {
         req.body.userAvatar = req.user.avatar;
         game.reviews.push(req.body); 
         game.save(function(err) {
+          console.log('routing function')
           res.redirect(`/games/${game._id}`);
         });
       });

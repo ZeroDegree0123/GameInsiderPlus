@@ -1,65 +1,63 @@
 <link rel='stylesheet' href='/stylesheets/info.css' />
 <%- include('../partials/header') %>
-    <section>
+  <section class="container">
+    <div class="info-wrapper">
+      <div class="preview">
         <h1><%= company.title %></h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>image</th>
-                    <th>title</th>
-                    <th>Founded</th>
-                    <th>Games</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <img src="<%= company.image %>" alt="">
-                    <td> <%= company.founded %></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <br><br><h2>Games</h2>
-<% if (user) { %> 
-  <form id="add-review-form" method="POST"
-    action="/companies/<%= company._id %>/products">
-    <label>Games:</label>
-    <textarea name="message"></textarea>
-    <button type="submit">Add Game</button>
-  </form>
-<% } %> 
-<% if (company.products.length) { %>
-  <table>
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Date</th>
-        <th>Game</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% let total = 0 %>
-      <% company.products.forEach(function(r) { %>
+        <img src="<%= company.image %>" alt="">
+      </div>
+      <div class="company"> 
+        <span> <%= company.founded %></span>
+      </div>          
+    </div>
+  </section>
+  <br><br><h2>Games</h2>
+  <% if (user) { %>
+    <section class="review-container">
+      <div class="review-wrapper">
+        <form id="add-review-form" method="POST"action="/companies/<%= company._id %>/products">
+        <div class="reviews-box">
+          <label>Games:</label>
+          <textarea name="message"></textarea>
+        </div>
+        <button type="submit">Add Game</button>
+      </form>
+      <div></div>
+    <% } %> 
+    <% if (company.products.length) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Date</th>
+            <th>Game</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% let total = 0 %>
+        <% company.products.forEach(function(r) { %>
+          <tr>
+            <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>"><%= r.userName %></td>
+            <td><%= r.createdAt.toLocaleDateString() %></td>
+            <td><%= r.message %></td>
+            <td>
+              <% if (user && user._id.equals(r.user)) { %> 
+                <form action="/products/<%= r._id %>?_method=DELETE" method="POST">
+                  <button type="submit">X</button>
+                </form>
+              <% } %> 
+            </td>
+          </tr>
+        <% }); %>
         <tr>
-          <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>"><%= r.userName %></td>
-          <td><%= r.createdAt.toLocaleDateString() %></td>
-          <td><%= r.message %></td>
-          <td>
-            <% if (user && user._id.equals(r.user)) { %> 
-              <form action="/products/<%= r._id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
-              </form>
-            <% } %> 
-          </td>
+          <td colspan="3"></td>
+          <td><strong><%= (total / company.products.length).toFixed(1) %></strong></td>
         </tr>
-      <% }); %>
-      <tr>
-        <td colspan="3"></td>
-        <td><strong><%= (total / company.products.length).toFixed(1) %></strong></td>
-      </tr>
-    </tbody>
-  </table>
-<% } else { %>
-  <h5>No games Yet</h5>
-<% } %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5>No games Yet</h5>
+  <% } %>
+  </div>
+</section> 
     <%- include('../partials/footer') %>
