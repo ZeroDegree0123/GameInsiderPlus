@@ -51,10 +51,15 @@ function show(req, res) {
 
 function deleteGame(req, res, next) {
     Game.findByIdAndDelete(req.params.id, function(err, game) {
-        if (err) return res.render('/');
-        res.redirect("/games");
+        const gameId = game.games.id(req.params.id);
+        if (!gameId.user.equals(req.user._id)) return res.redirect('/games');
+        game.remove();
+        game.save().then(function() {
+            res.redirect('/games');
+        }).catch(function(err) {
+            return next(err);
+        })
     });
-    
 }
 
 function create(req, res) {

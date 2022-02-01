@@ -63,10 +63,13 @@ const gameSchema = new Schema({
         enum: ['Yes', 'No'],
         default: 'No'
     },
-
     genre: {
         type: String,
     },
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
+    userName: String,
+    userAvatar: String,
+
     reviews: [gameReviewSchema],
 }, {
     timestamps: true
