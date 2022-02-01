@@ -17,6 +17,6 @@ router.get("/:id", gamesCtrl.show);
 
 router.post("/", isLoggedIn, gamesCtrl.create);
 
-router.delete('/:id', gamesCtrl.deleteGame);
+router.delete('/:id', isLoggedIn, gamesCtrl.deleteGame);
 
 module.exports = router;
