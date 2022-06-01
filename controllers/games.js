@@ -13,7 +13,7 @@ module.exports = {
 
 function update(req, res) {
     Game.findOneAndUpdate(
-        {_id: req.params.id, userRecommending: req.user._id},
+        {_id: req.params.id, user: req.user._id},
         req.body,
         {new: true},
         function(err, game) {
@@ -35,7 +35,7 @@ function newGame(req, res) {
 
 function edit(req, res, next) {
     console.log('routing1')
-    Game.findById({_id: req.params.id, userRecommending: req.user._id}, function(err, game) {
+    Game.findById({_id: req.params.id, user: req.user._id}, function(err, game) {
         console.log('routing2')
         if (err || !game) return res.redirect('/games');
         res.render('games/edit', {game});
@@ -51,11 +51,11 @@ function show(req, res) {
 
 function deleteGame(req, res, next) {
     Game.findByIdAndDelete(req.params.id, function(err, game) {
-        const gameId = game.games.id(req.params.id);
-        if (!gameId.user.equals(req.user._id)) return res.redirect('/games');
+        const gameId = game.games._id(req.params.id);
+        if (!gameId.user.equals(req.user._id)) res.redirect('/');
         game.remove();
         game.save().then(function() {
-            res.redirect('/games');
+            res.redirect('/');
         }).catch(function(err) {
             return next(err);
         })
@@ -64,7 +64,7 @@ function deleteGame(req, res, next) {
 
 function create(req, res) {
     const game = new Game(req.body);
-    console.log(game)
+    game.user = req.user._id;
     game.save(function (err) {
         if (err) return res.render("games/new");
         res.redirect("/games");

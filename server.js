@@ -13,9 +13,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var gamesRouter = require('./routes/games');
-var companiesRouter = require('./routes/companies');
 var reviewsRouter = require('./routes/reviews');
-var productsRouter = require('./routes/products');
 
 var app = express();
 
@@ -47,9 +45,8 @@ const isLoggedIn = require("./config/auth");
 
 app.use('/', indexRouter);
 app.use('/games', gamesRouter);
-app.use('/companies', companiesRouter);
 app.use('/', isLoggedIn, reviewsRouter);
-app.use('/', isLoggedIn, productsRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
