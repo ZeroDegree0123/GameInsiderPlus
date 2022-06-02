@@ -107,94 +107,100 @@ h1 {
 
 .info-wrapper {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   margin: 30px;
   box-shadow: 8px 4px 8px 8px rgb(0 0 0 / 20%);
 }
 
-.container > .info-wrapper > .preview > img {
-  width: 250px;
-  height: 200px;
-  margin: 0 0 10px 10px;
+.info-head {
+  margin: 20px;
+}
+
+.container > .info-wrapper > .info-head > img {
+  width: 400px;
+  height: 400px;
   border: 3px solid rgba(19, 193, 216, 0.5);
   box-shadow: 3px 3px 3px 3px rgba(0, 128, 0, 0.2);
 }
 
-.company {
-  display: flex;
-  flex-direction: column;
-  align-items: center
+.game-title {
+  padding: 10px
 }
 
-.esbr {
+.info-body {
   display: flex;
   flex-direction: column;
-  align-items: center
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.year {
+.game-details {
   display: flex;
-  flex-direction: column;
-  align-items: center
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.platform {
+.review-head {
   display: flex;
-  flex-direction: column;
-  align-items: center
-}
-.cross {
-  display: flex;
-  flex-direction: column;
-  align-items: center
-}
-
-.genre {
-  display: flex;
-  flex-direction: column;
-  align-items: center
+  justify-content: center;
 }
 
 .review-container {
-  display: block;
-}
-
-.review-wrapper {
   display: flex;
-  margin: 30px;
-  box-shadow: 0 0 2px 0 rgb(0 0 0 / 20%);
+  flex-direction: row;
+  justify-content: center;
+  margin: 40px;
 }
 
-.reviews-box {
+.form-container {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+}
+
+.review-textbox {
+  border-radius: 20%;
 }
 
 .ratings {
-  padding: 10px;
+  margin: 0 0 15px 0;
 }
 
-.reviews-wrapper2 {
+.spacer {
+  width: 100px;
+}
+
+.review-body-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.review-subheader {
   display: flex;
   flex-direction: row;
-  padding: 10px;
+  justify-content: space-between;
 }
 
-.company-founded {
+.review-message-container {
   display: flex;
-  align-self: center;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
+
 }
 
-.game-added {
-  padding: 10px;
+
+#submit-button {
+  background-color:rgb(26, 181, 228)
 }
 
-.delete-game {
-  margin: 0 18px 0 3px;
+#submit-button:hover {
+  background-color:rgb(24, 111, 137)
 }
 
 #website-name {
