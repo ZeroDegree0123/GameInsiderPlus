@@ -51,25 +51,58 @@ a {
   color: #dadada;
 }
 
+section {
+  display: block;
+}
+
+h3 {
+  padding: 20px;
+  display: inline-block;
+  flex-wrap: wrap;
+}
+
+h1 {
+  margin: 20px;
+  padding: 0 0 0 0px;
+}
+
+.nav-container {
+  display: flex;
+}
+
+.nav-links {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nav-container > .nav-links > a {
+  color: #dadada;
+  text-decoration: none;
+}
+
+.links {
+  margin: 0 30px 0 30px;
+  font-size: 20px;
+}
+
+.left-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .login {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 34px;
   color: #dadada;
-  width: 700px;
+  width: 180px;
 }
 
 .login img {
   height: 30px;
-}
-
-.website {
-  color: rgb(26, 181, 228);
-}
-
-section {
-  display: block;
 }
 
 .info-wrapper {
@@ -78,23 +111,12 @@ section {
   box-shadow: 8px 4px 8px 8px rgb(0 0 0 / 20%);
 }
 
-h1 {
-  margin: 20px;
-  padding: 0 0 0 0px;
-}
-
 .container > .info-wrapper > .preview > img {
   width: 250px;
   height: 200px;
   margin: 0 0 10px 10px;
   border: 3px solid rgba(19, 193, 216, 0.5);
   box-shadow: 3px 3px 3px 3px rgba(0, 128, 0, 0.2);
-}
-
-h3 {
-  padding: 20px;
-  display: inline-block;
-  flex-wrap: wrap;
 }
 
 .company {
@@ -173,4 +195,9 @@ h3 {
 
 .delete-game {
   margin: 0 18px 0 3px;
+}
+
+#website-name {
+  color: rgb(26, 181, 228);
+  font-size: 25px;
 }

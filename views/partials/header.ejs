@@ -12,9 +12,11 @@
 </head>
 <body>
   <nav class="nav-container">
-    <a class="website" href="/">GameInsiderPlus</a>
-    <a class="gamesl" href="/games">Games</a>
-    <a class="aboutl" href="/about">About</a>
+    <div class="nav-links">
+      <a id="website-name" class="links" href="/">GameInsiderPlus</a>
+      <a class="links" href="/games">Games</a>
+      <a class="links" href="/about">About</a>
+    </div>
     <% if (user) { %>
       <div class="left-header">
         <a class="login" href="/logout">LOG OUT</a>
