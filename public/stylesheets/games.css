@@ -106,8 +106,10 @@ body > main {
 }
 
 .add-game {
-  font-size: 20px;
   margin: 0 0 80px 0;
+  text-decoration: none;
+  color: rgb(26, 181, 228);
+  font-size: 20px;
   opacity: 85%;
 }
 
@@ -138,6 +140,16 @@ body > main {
   max-width: 300px; 
 }
 
+.info {
+  color: rgb(26, 181, 228);
+  text-decoration: none;
+}
+
+.edit {
+  color: rgb(26, 181, 228);
+  text-decoration: none;
+}
+
 .image {
   object-fit: cover;
   height: 310px;
@@ -155,9 +167,23 @@ body > main {
   margin: 5px;
 }
 
+/* About Page */
 .about-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 30px;
+}
+
+.about-title {
+  margin: 0 0 30px 0;
+}
+
+.started-container {
+  display: flex;
+  flex-direction: column;  
   justify-content: center;
   align-items: center;
   text-align: center;
