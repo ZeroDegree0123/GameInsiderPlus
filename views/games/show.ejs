@@ -35,12 +35,12 @@
     </div>
   </section>
   <br><br>
-  <h2 class="review-head">Reviews</h2>
+  <h1 class="review-head">Reviews</h1>
   <% if (user) { %>
     <section class="review-container">
       <div class="form-container">
         <form id="add-review-form" method="POST" action="/games/<%= game._id %>/reviews">
-          <span><textarea name="review-textbox" placeholder="Add A Review Here..."></textarea></span>
+          <span><textarea name="message" placeholder="Add A Review Here..."></textarea></span>
           <div class="ratings">
             <label>Rating:</label>
             <select name="rating">
@@ -51,7 +51,7 @@
               <option value="5" selected>5</option>
             </select>
           </div>
-          <button id="submit-button" class="btn btn-primary" type="submit">Add Review</button>
+          <button id="submit-button" class="btn btn-primary" type="submit">Submit</button>
         </form>
       </div>
       <div class="spacer"></div>
@@ -64,24 +64,21 @@
               <div><img class="avatar" alt="avatar" src="<%= r.userAvatar %>">  <%= r.userName %></div>
               <div class="review-subheader">
                 <span>Rating: <%= r.rating %></span>
-                <span><%= r.createdAt.toLocaleDateString() %></span>
+                <span class="review-date"><%= r.createdAt.toLocaleDateString() %></span>
               </div>
-              <div class="user-text">
-                <h3>Review</h3>
-                <span><%= r.message %></span>
-              </div>
-              <div class="delete">
-                <% if (user && user._id.equals(r.user)) { %>
-                  <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                  </form>
+              <div class="user-text-container">
+                <div class="user-text"><%= r.message %></div>
+                  <% if (user && user._id.equals(r.user)) { %>
+                    <form id="delete-button" action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                      <button class="btn btn-danger btn-sm" type="submit">X</button>
+                    </form>
                   <% } %>
               </div>
               <% }); %>
                 <div>
                   <span colspan="3"></span>
                   <span><strong>
-                      <%= (total / game.reviews.length).toFixed(1) %>
+                    Rated:  <%= (total / game.reviews.length).toFixed(1) %>
                     </strong></span>
                 </div>
                 <% } else { %>

@@ -174,6 +174,8 @@ h1 {
 .review-body-container {
   display: flex;
   flex-direction: column;
+  margin: 15px;
+  margin-left: 150px;
 }
 
 .avatar {
@@ -184,23 +186,38 @@ h1 {
 .review-subheader {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
+  margin-top: 15px;
 }
 
-.review-message-container {
+.review-date {
+  padding-left: 30px;
+}
+
+.user-text-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-
+  justify-content: flex-start;
+  align-items: center;
 }
 
+.user-text {
+  border: 1px solid rgb(26, 181, 228);
+  border-radius: 5px; 
+  margin: 10px 0 10px 0;
+  padding: 10px;
+}
+
+#delete-button {
+  margin: 0 0 0 10px;
+}
 
 #submit-button {
-  background-color:rgb(26, 181, 228)
+  background-color:rgb(26, 181, 228);
 }
 
 #submit-button:hover {
-  background-color:rgb(24, 111, 137)
+  background-color:rgb(24, 111, 137);
 }
 
 #website-name {

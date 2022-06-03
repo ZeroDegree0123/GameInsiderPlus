@@ -143,6 +143,7 @@ body > main {
 .info {
   color: rgb(26, 181, 228);
   text-decoration: none;
+  padding-right: 15px;
 }
 
 .edit {

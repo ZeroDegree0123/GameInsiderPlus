@@ -11,7 +11,7 @@
                         <a class="edit" href="/games/<%= g._id %>/edit ">Edit Game</a>
                         <% if (user && user._id.equals(g.user)) {%> 
                         <form action="/games/<%= g._id %>?_method=DELETE" method="POST">
-                            <button type="submit">X</button>
+                            <button class="btn btn-danger btn-sm" type="submit">X</button>
                         </form>
                         <% } %> 
                     </div>
