@@ -1,6 +1,6 @@
 # GameInsiderPlus
 
-This app is designed to show and give information about games and their developers. Users can select named links that will lead them to their desired path. User must be signed in to make changes to the app.
+This app is designed to show and give information about games and their developers. Users can select named links that will lead them to their desired path. User must be signed in to make any changes to the app.
 
 
 ## ScreenShots
